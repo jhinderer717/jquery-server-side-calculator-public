@@ -11,9 +11,9 @@ You are going to be building a server-side calculator. The logic for the calcula
 [x] Create a user interface where the user can input two values (2 input elements) and the select type of mathematical operation.
     There should also be a 'C' button that will clear the user input fields.
   [x] commit
-[ ] When the submit (`=` button) is clicked, capture this input, bundle it up in an object, and send this object to the server   
+[x] When the submit (`=` button) is clicked, capture this input, bundle it up in an object, and send this object to the server   
     via a POST.
-    [ ] commit
+    [x] commit
 
 [ ] Build out the server-side logic to compute the numbers as appropriate. The server should be able to handle Addition, Subtraction, Multiplication, and Division.
   [ ] commit
