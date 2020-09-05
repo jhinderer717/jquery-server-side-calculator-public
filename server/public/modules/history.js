@@ -1,1 +1,1 @@
-let historyArray = [];
+let historyArray = [ ];

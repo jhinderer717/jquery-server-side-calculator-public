@@ -2,6 +2,8 @@
 const express = require( 'express' );
 const bodyParser = require( 'body-parser' );
 const app = express();
+//const history = require('./public/modules/history.js');
+let history = [];
 
 // uses
 app.use( express.static( 'server/public' ));
@@ -16,7 +18,14 @@ app.listen(port, ()=>{
 }); // end server up
 
 // routes
+
+app.get( '/history', (req, res)=>{
+    console.log('/history GET hit');
+    res.send(history);
+}) // end history GET
+
 app.post( '/history', (req, res)=>{
     console.log(req.body);
-    res.send('hello I am Swedish plumber');
+    history.push(req.body);
+    res.sendStatus( 201 );
 }) // end /history POST
