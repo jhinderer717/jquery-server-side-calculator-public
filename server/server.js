@@ -35,16 +35,16 @@ app.post( '/history', (req, res)=>{
 
 function doMath(object){
     console.log('in doMath using:', object);
-    if(object.operation === 'add'){
+    if(object.operation === '+'){
         return Number(object.fieldOne) + Number(object.fieldTwo);
     }
-    else if(object.operation === 'subtract'){
+    else if(object.operation === '-'){
         return Number(object.fieldOne) - Number(object.fieldTwo);
     }
-    else if(object.operation === 'multiply'){
+    else if(object.operation === '*'){
         return Number(object.fieldOne) * Number(object.fieldTwo);
     }    
-    else if(object.operation === 'divide'){
+    else if(object.operation === '/'){
         return Number(object.fieldOne) / Number(object.fieldTwo);
     }
 }

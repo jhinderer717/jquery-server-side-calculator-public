@@ -2,32 +2,49 @@ $(document).ready(onReady);
 
 function onReady(){
     console.log('in onReady');
-    $(document).on('click', '.equalButton', captureInputs);
+    $(document).on('click', '.equalButton', checkFields);
     getItems();
     $(document).on('click', '.additionButton', doAddition);
     $(document).on('click', '.subtractionButton', doSubtraction);
     $(document).on('click', '.multiplicationButton', doMultiplication);
     $(document).on('click', '.divisionButton', doDivision);
-
+    $(document).on('click', '.clearButton', clearInputs);
 }
 
 let lastOperator;
 
+function clearInputs(){
+    $('.fieldOne').val('');
+    $('.fieldTwo').val('');
+}
+
 function doAddition(){
     console.log('in doAddition');
-    lastOperator = 'add';
+    lastOperator = '+';
 }
 function doSubtraction(){
     console.log('in doSubtraction');
-    lastOperator = 'subtract';
+    lastOperator = '-';
 }
 function doMultiplication(){
     console.log('in doMultiplication');
-    lastOperator = 'multiply';
+    lastOperator = '*';
 }
 function doDivision(){
     console.log('in doDivision');
-    lastOperator = 'divide';
+    lastOperator = '/';
+}
+
+function checkFields(){
+    console.log('in checkFields');
+    if( $('.fieldOne').val() === '' || $('.fieldTwo').val() === '' 
+        || isNaN($('.fieldOne').val()) || isNaN($('.fieldTwo').val())
+    ){
+        captureInputs();
+    }
+    else{
+        console.log('Enter two numbers');
+    }
 }
 
 function captureInputs(){
@@ -52,6 +69,7 @@ function captureInputs(){
         alert('problem!');
         console.log(err);
     }) // end ajax POST
+    clearInputs();
 } // end captureInputs
 
 function getItems(){
