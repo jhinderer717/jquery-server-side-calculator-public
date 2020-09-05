@@ -26,6 +26,25 @@ app.get( '/history', (req, res)=>{
 
 app.post( '/history', (req, res)=>{
     console.log(req.body);
+    // do math
+    req.body.result = doMath(req.body);
+    // push into history array
     history.push(req.body);
     res.sendStatus( 201 );
 }) // end /history POST
+
+function doMath(object){
+    console.log('in doMath using:', object);
+    if(object.operation === 'add'){
+        return Number(object.fieldOne) + Number(object.fieldTwo);
+    }
+    else if(object.operation === 'subtract'){
+        return Number(object.fieldOne) - Number(object.fieldTwo);
+    }
+    else if(object.operation === 'multiply'){
+        return Number(object.fieldOne) * Number(object.fieldTwo);
+    }    
+    else if(object.operation === 'divide'){
+        return Number(object.fieldOne) / Number(object.fieldTwo);
+    }
+}

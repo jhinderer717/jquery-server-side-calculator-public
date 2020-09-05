@@ -57,7 +57,26 @@ function captureInputs(){
 function getItems(){
     console.log('in getItems');
     // select ul & empty
+    let el = $('.history');
+    el.empty();
     // make GET call to server
-    // loop through history
-    // append items to DOM
+    $.ajax({
+        method: 'GET',
+        url: '/history'
+    }).then(function(response){
+        console.log('back from GET:', response);
+        // loop through history
+        for(let i=0; i<response.length; i++){
+            // append items to DOM
+            $('.history').append(`
+                <li>${response[i].fieldOne} 
+                ${response[i].operation} 
+                ${response[i].fieldTwo} = 
+                ${response[i].result}</li>
+            `);
+        } // end for
+    }).catch(function (err){
+        console.log(err);
+        alert('nope');
+    }) // end ajax
 } // end getItems
