@@ -20,5 +20,6 @@
   "dependencies": {
     "express": "^4.17.1",
     "node": "^14.8.0"
-  }
+  },
+  "devDependencies": {}
 }
