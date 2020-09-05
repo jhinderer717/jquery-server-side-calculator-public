@@ -14,8 +14,10 @@ function onReady(){
 let lastOperator;
 
 function clearInputs(){
+    console.log('clearing fields');
     $('.fieldOne').val('');
     $('.fieldTwo').val('');
+    lastOperator = undefined;
 }
 
 function doAddition(){
@@ -38,12 +40,14 @@ function doDivision(){
 function checkFields(){
     console.log('in checkFields');
     if( $('.fieldOne').val() === '' || $('.fieldTwo').val() === '' 
-        || isNaN($('.fieldOne').val()) || isNaN($('.fieldTwo').val())
-    ){
-        captureInputs();
+        || isNaN( $('.fieldOne').val() ) || isNaN( $('.fieldTwo').val() ) 
+        || lastOperator === undefined ){
+        console.log(`fields don't check out`);
+        console.log('Enter two numbers and an operator');
     }
     else{
-        console.log('Enter two numbers');
+        console.log('fields check out');
+        captureInputs();
     }
 }
 
@@ -91,6 +95,9 @@ function getItems(){
                 ${response[i].operation} 
                 ${response[i].fieldTwo} = 
                 ${response[i].result}</li>
+            `);
+            $('.answer').replaceWith(`
+            <h2 class="answer">${response[i].result}</h2>
             `);
         } // end for
     }).catch(function (err){

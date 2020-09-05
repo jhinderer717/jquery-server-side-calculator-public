@@ -16,9 +16,9 @@ You are going to be building a server-side calculator. The logic for the calcula
     [x] commit
 
 [x] Build out the server-side logic to compute the numbers as appropriate. The server should be able to handle Addition, Subtraction, Multiplication, and Division.
-  [ ] commit
-[ ] Once the calculation is complete, send back the OK. You should do a GET request after the POST to get the actual calculation.
-  [ ] commit
+  [x] commit
+[x] Once the calculation is complete, send back the OK. You should do a GET request after the POST to get the actual calculation.
+  [x] commit
 
 ### History
 
