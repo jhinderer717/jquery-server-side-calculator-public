@@ -12,3 +12,19 @@ The history is kept in the server and is displayed everytime the equal button is
 
 
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+
+
+## Prerequities
+
+- Node.js
+
+
+## Install
+
+- run `npm install`
+- run `npm start`
+
+
+## Usage
+
+After running `npm start` navigate in a browser to `localhost:3000`. The calculator will be displayed on the page where you can use the app.
